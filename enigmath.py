@@ -2,7 +2,7 @@
 """Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>"""
 """License: GNU General Public License -- version 3"""
 
-import io, sys, os, struct
+import io, sys, os
 from math import *
 
 def encrypt(var, key):
@@ -47,7 +47,7 @@ def main():
             except:
                 byte = str(byte) + '0'
             index = index + 1
-        cbyte = struct.pack('!H', int(byte,2))
+        cbyte = int(byte,2).to_bytes(2, byteorder='big')
         sbyte = source.read(2)
         ebyte = encrypt(sbyte,cbyte)
         for onebyte in ebyte:
