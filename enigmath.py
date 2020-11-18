@@ -27,24 +27,20 @@ def main():
     result = 0
     n = 1
     byte = ''
-    for i in range (0,ceil(os.path.getsize(filename)/2)):
-        for bytepos in range (0,13):
+    for i in range (0,os.path.getsize(filename)):
+        for bytepos in range (0,7):
             if (result==0 or index > len(bin(result)[2:])): 
                 iterator = n
                 result = round(eval(formula)) 
                 index = 1
                 n = n + 1
                 bitresult = str(bin(result))[2:]
-            try:
-                byte = str(byte) + bitresult[bytepos]
-            except:
-                byte = str(byte) + '0'
+            byte = str(byte) + bitresult[bytepos]
             index = index + 1
         cbyte = int(byte,2)
-        sbyte = int.from_bytes(source.read(2), byteorder='big')
+        sbyte = int.from_bytes(source.read(1), byteorder='big')
         ebyte = sbyte ^ cbyte
-        for onebyte in ebyte.to_bytes(2, byteorder='big'):
-            destination.write(onebyte.to_bytes(1, byteorder='big'))
+        destination.write(ebyte.to_bytes(1, byteorder='big'))
         byte = ''
     source.close()
     destination.close()
