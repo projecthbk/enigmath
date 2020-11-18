@@ -14,7 +14,7 @@ def encrypt(var, key):
     
 def main():
     if (len(sys.argv)!=3):
-        print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nUsage: enigmath.py <filename> <math formula in python format>\nExample: enigmath.py Archive.zip \"(pi+sin(#*9))*100/sqrt(3)\"")
+        print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nUsage: enigmath.py <filename> <math formula in python format>\nExample: enigmath.py Archive.zip \"(pi+cos(#*30))*100/sqrt(3)\"")
         quit()
     filename = sys.argv[1]
     formula = sys.argv[2]
