@@ -2,7 +2,7 @@
 """Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>"""
 """License: GNU General Public License -- version 3"""
 
-import io, sys, os
+import sys, os
 from math import *
 
 def main():
