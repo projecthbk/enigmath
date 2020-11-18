@@ -21,6 +21,9 @@ def main():
     if (formula.count('#')==0):
         print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nUse variable # as iterator at least once in formula!")
         quit()
+    if (formula.count(' ')!=0 or formula.count('\n')!=0):
+        print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nDon't use spaces or new line characters in formula!")
+        quit()
     formula = formula.replace('#','iterator')
     code = "print(" + formula +")"
     source = open(filename,'rb')
