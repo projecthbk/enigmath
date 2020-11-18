@@ -5,13 +5,6 @@
 import io, sys, os
 from math import *
 
-def encrypt(var, key):
-    key = key[:len(var)]
-    int_var = int.from_bytes(var, sys.byteorder)
-    int_key = int.from_bytes(key, sys.byteorder)
-    int_enc = int_var ^ int_key
-    return int_enc.to_bytes(len(var), sys.byteorder)
-    
 def main():
     if (len(sys.argv)!=3):
         print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nUsage: enigmath.py <filename> <math formula in python format>\nExample: enigmath.py Archive.zip \"(pi+cos(#*30))*100/sqrt(3)\"")
@@ -47,10 +40,10 @@ def main():
             except:
                 byte = str(byte) + '0'
             index = index + 1
-        cbyte = int(byte,2).to_bytes(2, byteorder='big')
-        sbyte = source.read(2)
-        ebyte = encrypt(sbyte,cbyte)
-        for onebyte in ebyte:
+        cbyte = int(byte,2)
+        sbyte = int.from_bytes(source.read(2), byteorder='big')
+        ebyte = sbyte ^ cbyte
+        for onebyte in ebyte.to_bytes(2, byteorder='big'):
             destination.write(onebyte.to_bytes(1, byteorder='big'))
         byte = ''
     source.close()
