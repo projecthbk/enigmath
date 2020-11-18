@@ -2,7 +2,7 @@
 """Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>"""
 """License: GNU General Public License -- version 3"""
 
-import io, sys, os, struct, random, importlib
+import io, sys, os, struct
 from math import *
 
 def encrypt(var, key):
