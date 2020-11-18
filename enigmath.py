@@ -2,7 +2,7 @@
 """Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>"""
 """License: GNU General Public License -- version 3"""
 
-import io, sys, os, struct
+import io, sys, os, struct, random, importlib
 from math import *
 
 def encrypt(var, key):
@@ -25,7 +25,6 @@ def main():
         print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nDon't use spaces or new line characters in formula!")
         quit()
     formula = formula.replace('#','iterator')
-    code = "print(" + formula +")"
     source = open(filename,'rb')
     if (filename[-9:]!='.enigmath'):
         destination = open(filename + '.enigmath','wb')
@@ -38,13 +37,8 @@ def main():
     for i in range (0,ceil(os.path.getsize(filename)/2)):
         for bytepos in range (0,13):
             if (result==0 or index > len(bin(result)[2:])): 
-                old_stdout = sys.stdout 
-                new_stdout = io.StringIO()  
-                sys.stdout = new_stdout 
                 iterator = n
-                exec(code)
-                result = round(float(sys.stdout.getvalue().strip()))
-                sys.stdout = old_stdout 
+                result = round(eval(formula)) 
                 index = 1
                 n = n + 1
                 bitresult = str(bin(result))[2:]
