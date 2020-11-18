@@ -20,6 +20,7 @@ def main():
     formula = sys.argv[2]
     if (formula.count('#')==0):
         print("MATH ENIGMA ENCODER: Create your own any \"enrypting machine\".\nUse variable # as iterator at least once in formula!")
+        quit()
     formula = formula.replace('#','iterator')
     code = "print(" + formula +")"
     source = open(filename,'rb')
