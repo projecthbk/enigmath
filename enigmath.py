@@ -35,7 +35,10 @@ def main():
                 index = 1
                 n = n + 1
                 bitresult = str(bin(result))[2:]
-            byte = str(byte) + bitresult[bytepos]
+            try:
+                byte = str(byte) + bitresult[bytepos]
+            except:
+                byte = str(byte) + "0"
             index = index + 1
         cbyte = int(byte,2)
         rbyte = source.read(1)
