@@ -38,7 +38,7 @@ def main():
             try:
                 byte = str(byte) + bitresult[bytepos]
             except:
-                byte = str(byte) + "0"
+                byte = str(byte) + '0'
             index = index + 1
         cbyte = int(byte,2)
         rbyte = source.read(1)
