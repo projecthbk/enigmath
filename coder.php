@@ -1,5 +1,9 @@
 <?php
 		ini_set('max_execution_time', 0);
+		if ($_FILES['encfile']['size']>1048576) {
+			echo 'MAX FILESIZE: 1024kB';
+			exit();
+		}
 		$filename=basename($_FILES['encfile']['name']);
 		if (substr($filename,-9)=='.enigmath')
 			$file = substr($filename,0,strlen($filename)-9) . '.original';
