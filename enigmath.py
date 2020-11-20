@@ -31,10 +31,10 @@ def main():
         for bytepos in range (0,7):
             if result==0 or index > len(bin(result)[2:]): 
                 iterator = n
-                result = round(eval(formula)) 
+                result = round(abs(eval(formula)))
                 index = 1
                 n = n + 1
-                bitresult = str(bin(result))[2:]
+                bitresult = bin(result)[2:]
             try:
                 byte = str(byte) + bitresult[bytepos]
             except:
