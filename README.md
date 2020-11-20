@@ -12,7 +12,7 @@ As it operates on integers use multiplifier to achive greater precision. [Math f
 ### Optionally
 
 1. Download and copy all files (`enigmathize.py` is not necessary) to `public web folder` on any `server` 
-2. Use `index.php` to see your `formula plot` and `encrypt/decrypt` files in your `browser`
+2. Use `index.php` to see your `formula plot` and `encrypt/decrypt` files in `web browser`
 
 ### For large files
 
