@@ -15,7 +15,7 @@
 		header('Expires: 0');
 		header('Cache-Control: must-revalidate');
 		header('Pragma: public');
-		$filename = 'tmp' + strval(rand(1000,9999));
+		$filename = 'tmp' . strval(rand(1000,9999));
 		move_uploaded_file($_FILES['encfile']['tmp_name'],$filename);
 		shell_exec('python3 enigmath.py ' . $filename . ' "' . $_POST['formula'] . '"');
 		while (filesize($filename . '.enigmath')<$_FILES['encfile']['size']) sleep(1);
