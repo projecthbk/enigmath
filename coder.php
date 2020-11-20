@@ -1,4 +1,5 @@
 <?php
+		ini_set('max_execution_time', 0);
 		$filename=basename($_FILES['encfile']['name']);
 		if (substr($filename,-9)=='.enigmath')
 			$file = substr($filename,0,strlen($filename)-9) . '.original';
