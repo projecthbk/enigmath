@@ -2,12 +2,8 @@
 """Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>"""
 """License: GNU General Public License -- version 3"""
 
-import sys,os,hashlib,subprocess
+import sys,os,hashlib
 
-def random_string(length):
-    pool = string.letters + string.digits
-    return ''.join(random.choice(pool) for i in xrange(length))
-    
 def main():
     if len(sys.argv)!=4:
         print("ENIGMATHIZER: Creates enigmath protected ZIP package for large files.\nUsage: enigmathize.py <outputzipname without extension> <file, foldername or wildcard> <math formula in python format>\nExample: enigmathize.py MyZipFile /MyFolder \"(pi+cos(#*30))*100/sqrt(3)\"")
@@ -21,15 +17,15 @@ def main():
     if formula.count(' ')!=0 or formula.count('\n')!=0:
         print("ENIGMATHIZER: Creates enigmath protected ZIP package for large files.\nDon't use spaces or new line characters in formula!")
         quit()
-    password = hashlib.md5(os.urandom(32)).hexdigest()
+    password = hashlib.sha256(os.urandom(64)).hexdigest()
     os.system("zip -P " + password + " -r " + zipname + ".zip \"" + foldername + "\"")
-    passfile = open("password.txt","wt")
+    passfile = open("password","wt")
     passfile.write(password)
     passfile.close()
-    os.system("python3 " + os.path.abspath(os.path.dirname(sys.argv[0])) + "/enigmath.py password.txt \"" + formula + "\"")
-    os.system("zip -r " + zipname + ".enigmath.zip " + zipname + ".zip password.txt.enigmath")
-    os.remove("password.txt")
-    os.remove("password.txt.enigmath")
+    os.system("python3 " + os.path.abspath(os.path.dirname(sys.argv[0])) + "/enigmath.py password \"" + formula + "\"")
+    os.system("zip -r " + zipname + ".enigmath.zip " + zipname + ".zip password.enigmath")
+    os.remove("password")
+    os.remove("password.enigmath")
     os.remove(zipname + ".zip")
             
 if __name__ == '__main__':
