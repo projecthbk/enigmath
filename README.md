@@ -13,3 +13,9 @@ As it operates on integers use multiplifier to achive greater precision. [Math f
 
 1. Download and copy all files to `public web folder` 
 2. Use `index.php` to see your `formula plot` and `encrypt/decrypt` files in `browser`
+
+### For large files
+
+1. As `EnigMATH` is heavy on resources you may find `enigmathizer` useful tool,
+2. Run is as `executable` (as above) with name of `zipfile` to create (without `extension`), `file` or `folder name` also `wildcard` and finally `encryption formula` as in `EnigMATH` itself.
+3. Resulting file has extension `.enigmath.zip`. It consists of `password.txt` to decrypt with `EnigMATH` plus password protected ZIP.
