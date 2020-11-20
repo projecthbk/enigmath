@@ -77,6 +77,9 @@ var myLineChart = new Chart(ctx, {
         legend: {
 			display: false
 		},
+		tooltips: {
+            enabled: false
+		}
     }
 });
 </script>
