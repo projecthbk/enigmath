@@ -12,16 +12,17 @@
 		input,label { font-family: sans-serif; font-size: 14px; }
 		a { text-decoration: none; color: #000000; }
 		a:hover { text-decoration: underline; }
-		div { background: #cccccc; border-radius: 15px; margin: 10px auto; padding: 10px; }
+		div { width: 500px; background: #cccccc; border-radius: 15px; margin: 10px auto; padding: 10px; }
+		input[type="text"],input[type="file"] { width: 300px; }
 		form { margin: 0; }
 	</style>
 </head>
 <body>
 	<center>
-	<div style="width: 1100px;">
+	<div>
 	<form>
 		<label>FORMULA</label>
-		<input type="text" style="width: 909px;" name="formula" value="<?php echo $_GET['formula']; ?>" placeholder="MATH FORMULA IN PYTHON SYNTAX" />
+		<input type="text" name="formula" value="<?php echo $_GET['formula']; ?>" placeholder="MATH FORMULA IN PYTHON SYNTAX" />
 		<input type="submit" value="CHECK" />
 	</form>
 	</div>
@@ -34,7 +35,7 @@
 	$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
 	}
 	?>
-	<div style="width: 500px;">
+	<div>
 	<form action="coder.php" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="formula" value="<?php echo $_GET['formula']; ?>" />
 		<input type="file" name="encfile" />
