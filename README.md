@@ -12,4 +12,4 @@ As it operates on integers use multiplifier to achive greater precision. Avoid g
 ### Optionaly
 
 1. Copy all files to `public web folder`
-2. Use `index.html` to see your formula plot and `encrypt/decrypt` files in `browser`
+2. Use `index.html` to see your `formula plot` and `encrypt/decrypt` files in `browser`
