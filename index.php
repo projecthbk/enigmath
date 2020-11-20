@@ -19,7 +19,7 @@
 </head>
 <body>
 	<center>
-	<a href="https://github.com/projecthbk/enigmath" target="_BLANK"><h1>EnigMATH</h1></a>
+	<h1><a href="https://github.com/projecthbk/enigmath" target="_BLANK">EnigMATH</a></h1>
 	<div>
 	<form>
 		<label>FORMULA</label>
