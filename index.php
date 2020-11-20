@@ -71,11 +71,14 @@ var myLineChart = new Chart(ctx, {
             display: true,
             text: "Encryption Data Plot"
         },
+        legend: {
+			display: false
+		},
     }
 });
 </script>
 <?php
-}
+	}
 ?>
 </body>
 </html>
