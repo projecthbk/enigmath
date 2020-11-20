@@ -12,9 +12,9 @@
 		input,label { font-family: sans-serif; font-size: 14px; }
 		a { text-decoration: none; color: #000000; }
 		a:hover { text-decoration: underline; }
-		div { width: 500px; background: #cccccc; border-radius: 15px; margin: 10px auto; padding: 10px; }
+		div { width: 500px; background: #cccccc; border-radius: 15px; margin: 5px auto; padding: 10px; }
 		input[type="text"],input[type="file"] { width: 300px; }
-		form { margin: 0; }
+		form,h1 { margin: 0; }
 	</style>
 </head>
 <body>
