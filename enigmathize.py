@@ -17,7 +17,7 @@ def main():
     if formula.count(' ')!=0 or formula.count('\n')!=0:
         print("ENIGMATHIZER: Creates EnigMATH protected ZIP package for large files.\nDon't use spaces or new line characters in formula!")
         quit()
-    password = hashlib.sha256(os.urandom(64)).hexdigest()
+    password = hashlib.sha256(os.urandom(256)).hexdigest()
     os.system("zip -P " + password + " -r " + zipname + ".zip \"" + foldername + "\"")
     passfile = open("password","wt")
     passfile.write(password)
