@@ -19,7 +19,7 @@
 </head>
 <body>
 	<center>
-	<h1>EnigMATH</h1>
+	<a href="https://github.com/projecthbk/enigmath" target="_BLANK"><h1>EnigMATH</h1></a>
 	<div>
 	<form>
 		<label>FORMULA</label>
@@ -34,6 +34,10 @@
 		$label[]=n;
 	$labels = json_encode($label);
 	$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
+	if (substr($values,0,11)=='MATH ENIGMA') {
+		echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div>';
+		exit();
+	} else if ($values=='') exit();
 	?>
 	<div>
 	<form action="coder.php" method="POST" enctype="multipart/form-data">
@@ -71,7 +75,7 @@ var myLineChart = new Chart(ctx, {
 });
 </script>
 <?php
-	}
+}
 ?>
 </body>
 </html>
