@@ -24,7 +24,7 @@
 	<form>
 		<label>FORMULA</label>
 		<input type="text" name="formula" value="<?php echo $_GET['formula']; ?>" placeholder="MATH FORMULA IN PYTHON SYNTAX" />
-		<input type="submit" value="CHECK" />
+		<input type="submit" value="PLOT" />
 	</form>
 	</div>
 	<?php
