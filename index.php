@@ -38,7 +38,7 @@
 		echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
 		exit();
 	} else if ($values=='') {
-		echo "<div>MATH ENIGMA TESTER: Create your own any \"enrypting machine\".<br />Something went wrong with formula. Check syntax.</div></body></html>";
+		echo '<div>MATH ENIGMA TESTER: Create your own any "enrypting machine".<br />Something went wrong with formula. Check syntax.</div></body></html>';
 		exit();
 	}
 	?>
