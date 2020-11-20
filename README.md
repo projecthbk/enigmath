@@ -3,7 +3,7 @@
 
 Python script encoding and decoding any file with mathematical formula as your keyphrase.
 
-As it operates on integers use multiplifier to achive greater precision. Avoid getting to zeros.
+As it operates on integers use multiplifier to achive greater precision. [Math functions to use](https://docs.python.org/3/library/math.html).
 
 1. Download `enigmath.py` and preferably make script `executable` by `chmod +x enigmath.py` 
 2. Encrypt any file `./enigmath.py MyFile.zip "#*pi+cos(#/30*e)*500/sqrt(3)"` (formula `in brackets` and no need to use `math.` prefix - use `variable of iteration #` at least once in a formula!)
