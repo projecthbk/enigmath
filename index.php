@@ -23,7 +23,7 @@
 	<div>
 	<form>
 		<label>FORMULA</label>
-		<input type="text" name="formula" value="<?php echo $_GET['formula']; ?>" placeholder="MATH FORMULA IN PYTHON SYNTAX" />
+		<input type="text" name="f" value="<?php echo $_GET['f']; ?>" placeholder="MATH FORMULA IN PYTHON SYNTAX" />
 		<input type="submit" value="PLOT" />
 	</form>
 	</div>
@@ -33,7 +33,7 @@
 	for ($n=1;$n<101;$n++) 
 		$label[]=n;
 	$labels = json_encode($label);
-	$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
+	$values = shell_exec('python3 enigtest.py "' . $_GET['f'] . '"');
 	if (substr($values,0,11)=='MATH ENIGMA') {
 		echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
 		exit();
