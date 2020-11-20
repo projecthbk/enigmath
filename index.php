@@ -34,7 +34,7 @@
 		$count = count(explode(',',$values));
 		$label=array();
 		for ($n=1;$n<=$count;$n++) 
-			$label[]=n;
+			$label[]=$n;
 		$labels = json_encode($label);
 		if (substr($values,0,11)=='MATH ENIGMA') {
 			echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
