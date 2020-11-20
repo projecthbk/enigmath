@@ -9,7 +9,7 @@
 			$file = substr($filename,0,strlen($filename)-9) . '.original';
 		else
 			$file = $filename . '.enigmath';
-		header('Content-Description: EnigMATH encoded file');
+		header('Content-Description: EnigMATH Encoded File');
 		header('Content-Type: application/octet-stream');
 		header('Content-Disposition: attachment; filename="' . $file . '"');
 		header('Expires: 0');
