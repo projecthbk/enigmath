@@ -33,7 +33,6 @@
 		$label[]=n;
 	$labels = json_encode($label);
 	$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
-	}
 	?>
 	<div>
 	<form action="coder.php" method="POST" enctype="multipart/form-data">
@@ -44,7 +43,6 @@
 	</div>
 	<div style="width: 1280px; height: 720px;"><canvas id="myChart" width="1280" height="720"></canvas></div>
 	</center>
-</body>
 <script>
 var ctx = document.getElementById('myChart');
 var myLineChart = new Chart(ctx, {
@@ -71,4 +69,8 @@ var myLineChart = new Chart(ctx, {
     }
 });
 </script>
+<?php
+	}
+?>
+</body>
 </html>
