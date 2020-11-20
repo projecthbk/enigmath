@@ -23,7 +23,7 @@
 	<h1><a href="https://github.com/projecthbk/enigmath" target="_BLANK">EnigMATH</a></h1>
 	<div>
 	<form>
-		<label>FORMULA</label>
+		<label>FORMULA: </label>
 		<input type="text" name="formula" value="<?php echo $_GET['formula']; ?>" placeholder="MATH FORMULA IN PYTHON SYNTAX" />
 		<input type="submit" value="PLOT" />
 	</form>
