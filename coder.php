@@ -1,7 +1,7 @@
 <?php
 		ini_set('max_execution_time', 0);
 		if ($_FILES['encfile']['size']>1048576) {
-			echo '<meta http-equiv="refresh" content="3;url=./?formula=' . urlencode($_POST['formula']) . '" /><center>MAX FILESIZE: 1024kB</center>';
+			echo '<meta http-equiv="refresh" content="3;url=./?f=' . urlencode($_POST['formula']) . '" /><center>MAX FILESIZE: 1024kB</center>';
 			exit();
 		}
 		$filename=basename($_FILES['encfile']['name']);
