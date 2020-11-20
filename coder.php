@@ -20,6 +20,5 @@
 		shell_exec('python3 enigmath.py ' . $filename . ' "' . $_POST['formula'] . '"');
 		while (filesize($filename . '.enigmath')<$_FILES['encfile']['size']) sleep(1);
 		readfile($filename . '.enigmath');
-		foreach(glob($filename . "*") as $f) unlink($f);
-}
+		foreach(glob($filename . '*') as $f) unlink($f);
 ?>
