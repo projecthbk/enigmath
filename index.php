@@ -66,7 +66,7 @@ var myLineChart = new Chart(ctx, {
 		},
         title: {
             display: true,
-            text: "Encryption Data Chart"
+            text: "Encryption Data Plot"
         },
     }
 });
