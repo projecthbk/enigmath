@@ -19,6 +19,7 @@
 </head>
 <body>
 	<center>
+	<h1>EnigMATH</h1>
 	<div>
 	<form>
 		<label>FORMULA</label>
