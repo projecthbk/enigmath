@@ -2,6 +2,7 @@
      Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>
      License: GNU General Public License -- version 3
 -->
+
 <html>
 <head>
 	<title>EnigMATH</title>
@@ -28,19 +29,20 @@
 	</form>
 	</div>
 	<?php
-	if ($_GET['formula']!='') {
-	$label=array();
-	for ($n=1;$n<101;$n++) 
-		$label[]=n;
-	$labels = json_encode($label);
-	$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
-	if (substr($values,0,11)=='MATH ENIGMA') {
-		echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
-		exit();
-	} else if ($values=='') {
-		echo '<div>MATH ENIGMA TESTER: Create your own any "enrypting machine".<br />Something went wrong with formula. Check syntax.</div></body></html>';
-		exit();
-	}
+	if ($_GET['formula']!='') {;
+		$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
+		$count = count(explode(',',$values));
+		$label=array();
+		for ($n=1;$n<=$count;$n++) 
+			$label[]=n;
+		$labels = json_encode($label);
+		if (substr($values,0,11)=='MATH ENIGMA') {
+			echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
+			exit();
+		} else if ($values=='') {
+			echo '<div>MATH ENIGMA TESTER: Create your own any "enrypting machine".<br />Something went wrong with formula. Check syntax.</div></body></html>';
+			exit();
+		}
 	?>
 	<div>
 	<form action="coder.php" method="POST" enctype="multipart/form-data">
@@ -78,7 +80,7 @@ var myLineChart = new Chart(ctx, {
 			display: false
 		},
 		tooltips: {
-		    	enabled: false
+            enabled: false
 		}
     }
 });
