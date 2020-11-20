@@ -12,7 +12,7 @@
 		input,label { font-family: sans-serif; font-size: 14px; }
 		a { text-decoration: none; color: #000000; }
 		a:hover { text-decoration: underline; }
-		div { width: 500px; background: #cccccc; border-radius: 15px; margin: 5px auto; padding: 10px; }
+		div { width: 500px; background: #cccccc; border-radius: 15px; margin: 5px auto; padding: 10px; font-family: sans-serif; font-size: 14px; }
 		input[type="text"],input[type="file"] { width: 300px; }
 		form,h1 { margin: 0; }
 	</style>
@@ -35,9 +35,12 @@
 	$labels = json_encode($label);
 	$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
 	if (substr($values,0,11)=='MATH ENIGMA') {
-		echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div>';
+		echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
 		exit();
-	} else if ($values=='') exit();
+	} else if ($values=='') {
+		echo "<div>MATH ENIGMA TESTER: Create your own any \"enrypting machine\".<br />Something went wrong with formula. Check syntax.</div></body></html>";
+		exit();
+	}
 	?>
 	<div>
 	<form action="coder.php" method="POST" enctype="multipart/form-data">
