@@ -20,11 +20,15 @@ def main():
     result = 0
     n = 1  
     results = []
-    while n<101:
-        iterator = n
-        result = round(abs(eval(formula))) 
-        n = n + 1
-        results.append(result)
+    for byte in range (0,127):
+        for bytepos in range (0,7):
+            if result==0 or index > len(bin(result)[2:]):
+                iterator = n
+                result = round(abs(eval(formula))) 
+                n = n + 1
+                index = 1
+                results.append(result)
+            index = index + 1
     print(json.dumps(results))
     
 if __name__ == '__main__':
