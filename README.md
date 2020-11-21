@@ -17,5 +17,5 @@ As it operates on integers use multiplifier to achive greater precision. [Math f
 ### For large files
 
 1. As `EnigMATH` is heavy on resources you may find also `enigmathize.py` useful tool
-2. Run it as `executable` by `chmod +x enigmath.py` with name of `zipfile` to create (without `extension`), `file or folder name` and finally `encryption formula` as in `EnigMATH` itself.
-3. Resulting file has extension `.enigmath.zip`. It consists of `password.enigmath` to decrypt with `EnigMATH` plus password protected `ZIP`.
+2. Run it as `executable` after `chmod +x enigmathize.py` with name of `zipfile` to create (without `extension`), `file or folder name` and finally `encryption formula` as in `EnigMATH` itself `./enigmathize.py MyZipName /MyFolder "#*pi+cos(#/30*e)*500/sqrt(3)"`
+3. Resulting file has extension `.enigmath.zip`. It consists of `password.enigmath` to decrypt with `EnigMATH` plus password protected `ZIP`
