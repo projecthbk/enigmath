@@ -39,6 +39,9 @@ def main():
     if len(sys.argv)==3:
         os.system("unzip \"" + unpackname + "\"")
         os.system("python3 " + os.path.abspath(os.path.dirname(sys.argv[0])) + "/enigmath.py password.enigmath \"" + formula + "\"")
+        if not os.path.isfile("password.original"):
+            print("ENIGMATHIZER: Creates EnigMATH protected ZIP package for large files.\nWrong formula! Assure that it's formula that ZIP was encrypted with.")
+            quit()        
         passfile = open("password.original","rt")
         password = passfile.read()
         passfile.close()
