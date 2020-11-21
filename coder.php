@@ -39,9 +39,9 @@
 			shell_exec('python3 enigmathize.py ' . $filename . ' "' . $_POST['formula'] . '"');
 			sleep(10);
 			while (file_exists('password.enigmath')) sleep(1);
-			readfile(substr($filename,0,strlen($filename)-13) . '.zip');
+			readfile(substr($filename,0,strlen($filename)-13) . '.original.zip');
 			unlink($filename);
-			unlink(substr($filename,0,strlen($filename)-13) . '.zip');
+			unlink(substr($filename,0,strlen($filename)-13) . '.original.zip');
 		} elseif ($type=='encode') {
 			$filename = 'tmp' . rand(1000,9999);
 			move_uploaded_file($_FILES['encfile']['tmp_name'],$filename);
