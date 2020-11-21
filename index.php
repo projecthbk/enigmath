@@ -36,7 +36,7 @@
 		for ($n=1;$n<=$count;$n++) 
 			$label[]=$n;
 		$labels = json_encode($label);
-		if (substr($values,0,11)=='MATH ENIGMA' || substr($values,0,12)=='ENIGMATHIZER') {
+		if (substr($values,0,11)=='MATH ENIGMA') {
 			echo '<div>' . str_ireplace("\n",'<br />',$values) . '</div></body></html>';
 			exit();
 		} else if ($values=='') {
