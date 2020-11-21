@@ -4,7 +4,7 @@
 			echo '<meta http-equiv="refresh" content="3;url=./?formula=' . urlencode($_POST['formula']) . '" /><center>ENIGMATH: File not uploaded properly. Allowed size up to 1GB.</center>';
 			exit();
 		}
-		if ($_FILES['encfile']['size']>1048576) {
+		if ($_FILES['encfile']['size']>3*1024*1024) {
 			if (substr($filename,-13)=='.enigmath.zip') {
 				$file = explode('.',$filename)[0] . '.zip';
 				$type = 'unpack';
