@@ -20,4 +20,4 @@ As it operates on integers use multiplifier to achive greater precision. [Math f
 
 1. Download and copy all files to `public web folder` on any `server`. Edit `.htaccess` with maximal `upload size` and `execution time`
 2. Use `index.php` to see your `formula plot` and `encrypt/decrypt` files in `web browser`
-3. Script uses `enigmath.py` for files smaller than `10MB` and `enigmathize.py` for larger files
+3. Script uses `enigmath.py` for files smaller than `1024KB` and `enigmathize.py` for larger files
