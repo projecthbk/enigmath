@@ -9,7 +9,7 @@
 			exit();
 		}
 		
-		if ($_FILES['encfile']['size']>3*1024*1024) {
+		if ($_FILES['encfile']['size']>3*1024*1024 || substr($filename,-4)=='.zip') {
 			if (substr($filename,-13)=='.enigmath.zip') {
 				$file = explode('.',$filename)[0] . '.original.zip';
 				$type = 'unpack';
