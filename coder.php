@@ -4,12 +4,11 @@
 			echo '<meta http-equiv="refresh" content="3;url=./?formula=' . urlencode($_POST['formula']) . '" /><center>ENIGMATH: File not uploaded properly. Allowed size up to 1GB.</center>';
 			exit();
 		}
-		if (file_exists('.lock')) {
-			echo '<meta http-equiv="refresh" content="3;url=./?formula=' . urlencode($_POST['formula']) . '" /><center>ENIGMATH: System is now processing another task. Try again later.</center>';
-			exit();
-		}
-		
-		if ($_FILES['encfile']['size']>3*1024*1024 || substr($filename,-4)=='.zip') {
+		if ($_FILES['encfile']['size']>5*1024*1024 || substr($filename,-4)=='.zip') {
+			if (file_exists('.lock')) {
+				echo '<meta http-equiv="refresh" content="3;url=./?formula=' . urlencode($_POST['formula']) . '" /><center>ENIGMATH: System is now processing another task. Try again later.</center>';
+				exit();
+			}
 			if (substr($filename,-13)=='.enigmath.zip') {
 				$file = substr($filename,0,strlen($filename)-13) . '.original.zip';
 				$type = 'unpack';
