@@ -31,17 +31,15 @@ def main():
     if len(sys.argv)==4:
         password = hashlib.sha256(os.urandom(256)).hexdigest()
         if foldername[-4:]=='.zip':
-            zipped = True
             foldername = foldername[:-4]
             os.system("unzip \"" + foldername + ".zip\" -d \"./" + foldername + "\"")
-        else:
-            zipped = False
-        os.system("zip -P " + password + " -r \"" + zipname + ".zip\" \"" + foldername + "\"")
-        if zipped:
             os.chdir(foldername)
+            os.system("zip -P " + password + " -r \"../" + zipname + ".zip\" .")
             os.system("rm -R *")
             os.chdir("../")
             os.rmdir(foldername)
+        else:
+            os.system("zip -P " + password + " -r \"" + zipname + ".zip\" \"" + foldername + "\"")
         passfile = open("password","wt")
         passfile.write(password)
         passfile.close()
