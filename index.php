@@ -56,8 +56,8 @@
 <script>
 var ctx = document.getElementById('myChart');
 var myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
+	type: 'line',
+	data: {
 		labels:  <?php echo $labels; ?>,
 		datasets: [{ 
 			label: "Value",
@@ -66,7 +66,7 @@ var myLineChart = new Chart(ctx, {
 			data: <?php echo $values; ?>
 		}]
 	},
-    options: {
+	options: {
 		responsive: true,
 		maintainAspectRatio: false,
 		legend: {
@@ -77,11 +77,11 @@ var myLineChart = new Chart(ctx, {
             text: "Encryption Data Plot"
         },
         legend: {
-			display: false
-		},
-		tooltips: {
-            enabled: false
-		}
+		display: false
+	},
+	tooltips:
+		enabled: false
+	}
     }
 });
 </script>
