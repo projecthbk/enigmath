@@ -11,10 +11,16 @@
 		
 		if ($_FILES['encfile']['size']>3*1024*1024 || substr($filename,-4)=='.zip') {
 			if (substr($filename,-13)=='.enigmath.zip') {
-				$file = explode('.',$filename)[0] . '.original.zip';
+				$file = substr($filename,0,strlen($filename)-13) . '.original.zip';
 				$type = 'unpack';
-			} else {
-				$file = explode('.',$filename)[0] . '.enigmath.zip';
+			} else { 
+				if (substr($filename,-4)=='.zip') {
+					$zip = substr($filename,0,strlen($filename)-(strlen(explode('.',$filename)[count(explode('.',$filename))-1])+1));
+					$file = $zip . '.enigmath.zip';
+				} else { 
+					$zip = $filename;
+					$file = $filename . '.enigmath.zip';
+				}
 				$type = 'pack';
 			}
 		} else {
@@ -33,11 +39,11 @@
 		if ($type=='pack') {
 			$filename = basename($_FILES['encfile']['name']);
 			move_uploaded_file($_FILES['encfile']['tmp_name'],$filename);
-			shell_exec('python3 enigmathize.py "' . explode('.',$filename)[0] . '" "' . $filename . '" "' . $_POST['formula'] . '"');
+			shell_exec('python3 enigmathize.py "' . $zip . '" "' . $filename . '" "' . $_POST['formula'] . '"');
 			while (file_exists('.lock')) sleep(1);
-			readfile(explode('.',$filename)[0] . '.enigmath.zip');
+			readfile($zip . '.enigmath.zip');
 			unlink($filename);
-			unlink(explode('.',$filename)[0] . '.enigmath.zip');
+			unlink($zip . '.enigmath.zip');
 		} elseif ($type=='unpack') {
 			$filename = basename($_FILES['encfile']['name']);
 			move_uploaded_file($_FILES['encfile']['tmp_name'],$filename);
