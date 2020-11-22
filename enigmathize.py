@@ -2,7 +2,7 @@
 """Author: Krzysztof Hrybacz <krzysztof@zygtech.pl>"""
 """License: GNU General Public License -- version 3"""
 
-import sys,os,shutil,hashlib
+import sys,os,hashlib
 
 def main():
     if os.path.isfile('.lock'):
@@ -52,8 +52,11 @@ def main():
         os.remove("password.original")   
         os.system("unzip -P " + password + " \"" + unpackname[:-13] + ".zip\" -d \"./" + unpackname[:-13] + "\"")
         os.remove(unpackname[:-13] + ".zip")
-        os.system("zip -r -j \"" + unpackname[:-13] + ".original.zip\" \"" + unpackname[:-13] + "\"")
-        shutil.rmtree(unpackname[:-13])
+        os.chdir(unpackname[:-13])
+        os.system("zip -r \"../" + unpackname[:-13] + ".original.zip\" .")
+        os.system("rm -R *")
+        os.chdir("../")
+        os.rmdir(unpackname[:-13])
     os.remove(".lock")
         
 if __name__ == '__main__':
