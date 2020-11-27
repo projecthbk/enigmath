@@ -20,7 +20,7 @@
 </head>
 <body>
 	<center>
-	<h1><a href="https://github.com/projecthbk/enigmath" target="_BLANK">EnigMATH</a></h1>
+	<h1><a href="https://github.com/zygtech/enigmath" target="_BLANK">EnigMATH</a></h1>
 	<div>
 	<form>
 		<label>FORMULA: </label>
@@ -29,7 +29,7 @@
 	</form>
 	</div>
 	<?php
-	if ($_GET['formula']!='') {;
+	if ($_GET['formula']!='') {
 		$values = shell_exec('python3 enigtest.py "' . $_GET['formula'] . '"');
 		$count = count(explode(',',$values));
 		$label=array();
