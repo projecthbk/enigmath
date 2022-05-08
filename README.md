@@ -1,5 +1,5 @@
 # enigmath
-## EnigMATH: create your own "encrypting machine" ([Example Site](https://zygtech.pl/enigmath/?formula=%23*pi%2Bcos%28%23%2F30*e%29*500%2Fsqrt%283%29))
+## EnigMATH: create your own "encrypting machine"
 
 Python script encoding and decoding any file with mathematical formula as your keyphrase.
 
